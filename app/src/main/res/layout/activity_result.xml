@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <!--  Diagnose Title  -->
+        <TextView
+            android:id="@+id/res_act_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Result"
+            android:textSize="30sp"
+            android:textColor="@color/black"/>
+
+        <com.ramijemli.percentagechartview.PercentageChartView
+            android:id="@+id/res_act_result_pcv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:pcv_mode="ring"
+            app:pcv_startAngle="90"
+            app:pcv_gradientType="linear"
+            app:pcv_gradientColors="#EEBA66, #F6D5A3, #FBEFDA"
+            app:pcv_gradientDistributions="0, 0.5, 1"
+            app:pcv_backgroundBarColor="#EEEEEE"
+            app:pcv_backgroundBarThickness="7dp"
+            app:pcv_orientation="clockwise"
+            app:pcv_animDuration="1200"
+            app:pcv_animInterpolator="accelerate_decelerate"
+            app:pcv_textColor="@color/black"
+            app:pcv_textSize="45sp"
+            app:pcv_typeface="Roboto-Bold.ttf"/>
+
+        <TextView
+            android:id="@+id/res_act_stat_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Based on statistics"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

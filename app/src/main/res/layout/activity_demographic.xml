@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DemographicActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dia_act_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Tell something about yourself"
+            android:textSize="25dp"
+            android:textColor="@color/black"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dem_act_name_tf"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:hint="Name"
+            android:fontFamily="@font/roboto_light"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:text="Sex"/>
+
+        <RadioGroup
+            android:id="@+id/dem_act_sex_rg"
+            android:checkedButton="@+id/dem_act_male_rb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/dem_act_male_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:text="Male"
+                android:fontFamily="@font/roboto_light"
+                android:buttonTint="@color/porsche_100"/>
+
+            <RadioButton
+                android:id="@+id/dem_act_female_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Female"
+                android:fontFamily="@font/roboto_light"
+                android:buttonTint="@color/porsche_100"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dem_act_age_menu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:hint="Age Group"
+            android:fontFamily="@font/roboto_light"
+            app:hintTextColor="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/dem_act_age_actv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dem_act_region_menu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:hint="Region"
+            android:fontFamily="@font/roboto_light"
+            app:hintTextColor="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/dem_act_region_actv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dem_act_cont_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:onClick="nextButton"
+            android:text="Continue"
+            android:textColor="#050505"
+            app:backgroundTint="#f0c882"
+            app:cornerRadius="10dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
