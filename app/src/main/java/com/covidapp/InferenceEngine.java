@@ -23,31 +23,35 @@ public class InferenceEngine {
 
         Network net = new Network();
 
-        try {
-            InputStream is = context.getAssets().open("Covid-new.xdsl");
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            StringBuilder sb = new StringBuilder();
-            for (String line; (line = br.readLine()) != null; ) {
-                sb.append(line).append('\n');
+        if(selectedItems.isEmpty()) {
+            return 0.02587925091;
+        } else {
+            try {
+                InputStream is = context.getAssets().open("Covid-new.xdsl");
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                StringBuilder sb = new StringBuilder();
+                for (String line; (line = br.readLine()) != null; ) {
+                    sb.append(line).append('\n');
+                }
+                net.readString(sb.toString());
+            } catch (IOException e) {
+                Log.e("IOExceptionError", e.toString(), e.getCause());
             }
-            net.readString(sb.toString());
-        } catch (IOException e) {
-            Log.e("IOExceptionError", e.toString(), e.getCause());
+
+            net.setEvidence("SEX", sex);
+            net.setEvidence("AGE_CAT", age);
+
+            for(String selectedItem : selectedItems) {
+                net.setEvidence(selectedItem, "Yes");
+            }
+
+            for(String notSelectedItem : notSelectedItems) {
+                net.setEvidence(notSelectedItem, "No");
+            }
+
+            net.updateBeliefs();
+            double[] beliefs = net.getNodeValue("COVID");
+            return beliefs[0];
         }
-
-        net.setEvidence("SEX", sex);
-        net.setEvidence("AGE_CAT", age);
-
-        for(String selectedItem : selectedItems) {
-            net.setEvidence(selectedItem, "Yes");
-        }
-
-        for(String notSelectedItem : notSelectedItems) {
-            net.setEvidence(notSelectedItem, "No");
-        }
-
-        net.updateBeliefs();
-        double[] beliefs = net.getNodeValue("COVID");
-        return beliefs[0];
     }
 }

@@ -63,7 +63,7 @@ public class ResultActivity extends AppCompatActivity {
         resultPcv.setProgress((float) result, true);
         resultPcv.setTextFormatter(progress -> String.format("%.2f", result));
 
-        if(result<=40) {
+        if(result<=50) {
             recTv.setText(R.string.low_prob_recom);
             recSubTv.setText(R.string.low_prob_recom_sub);
         } else {
