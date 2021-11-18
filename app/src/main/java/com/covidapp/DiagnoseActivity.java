@@ -3,9 +3,7 @@ package com.covidapp;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
-import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,8 +27,6 @@ public class DiagnoseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(null);
         setContentView(R.layout.activity_diagnose);
-
-
 
         // Initialization of variables
         feverCardView = findViewById(R.id.dia_act_fvr_cv);
@@ -63,7 +59,6 @@ public class DiagnoseActivity extends AppCompatActivity {
 //        contactView.setOnClickListener(view -> contactView.toggle());
 //        travelView.setOnClickListener(view -> travelView.toggle());
 //        frontlineView.setOnClickListener(view -> frontlineView.toggle());
-
 
 
         submitButton.setOnClickListener(view -> {
@@ -116,6 +111,12 @@ public class DiagnoseActivity extends AppCompatActivity {
                 notSelectedItems.add("SYM_MUSCLEPAIN");
             }
 
+            if(runny_noseCardView.isChecked()) {
+                selectedItems.add("SYM_RUNNY_NOSE");
+            } else {
+                notSelectedItems.add("SYM_RUNNY_NOSE");
+            }
+
             if(sore_throatCardView.isChecked()) {
                 selectedItems.add("SYM_THROAT");
             } else {
@@ -126,6 +127,12 @@ public class DiagnoseActivity extends AppCompatActivity {
                 selectedItems.add("SYM_SHORT_BREATH");
             } else {
                 notSelectedItems.add("SYM_SHORT_BREATH");
+            }
+
+            if(diarrheaCardView.isChecked()) {
+                selectedItems.add("SYM_DIARRHEA");
+            } else {
+                notSelectedItems.add("SYM_DIARRHEA");
             }
 
             if(headacheCardView.isChecked()) {
