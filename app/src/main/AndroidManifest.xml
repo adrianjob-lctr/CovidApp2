@@ -10,10 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidApp">
         <activity
-            android:name=".DiagnoseActivity2"
-            android:exported="true" />
-        <activity
-            android:name=".SplashScreen"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,17 +23,17 @@
             android:exported="true" />
         <activity
             android:name=".LearnMoreActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DemographicActivity"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DiagnoseActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".DemographicActivity" />
         <activity
             android:name=".ResultActivity"
-            android:parentActivityName=".DiagnoseActivity" />
-
+            android:parentActivityName=".DemographicActivity" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -24,6 +24,7 @@ public class LearnMoreActivity extends AppCompatActivity {
     private MaterialCardView infoCardView;
 
     SpannableString string = new SpannableString("Text with\nBullet point");
+
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onCreate(Bundle savedInstanceState) {

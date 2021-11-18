@@ -18,12 +18,13 @@ public class InferenceEngine {
         this.context = context;
     }
 
-    public double getProbability(ArrayList<String> selectedItems) {
+    public double getProbability(ArrayList<String> selectedItems, ArrayList<String>  notSelectedItems,
+                                 String sex, String age) {
 
         Network net = new Network();
 
         try {
-            InputStream is = context.getAssets().open("Covid.xdsl");
+            InputStream is = context.getAssets().open("Covid-new.xdsl");
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             StringBuilder sb = new StringBuilder();
             for (String line; (line = br.readLine()) != null; ) {
@@ -34,12 +35,19 @@ public class InferenceEngine {
             Log.e("IOExceptionError", e.toString(), e.getCause());
         }
 
+        net.setEvidence("SEX", sex);
+        net.setEvidence("AGE_CAT", age);
+
         for(String selectedItem : selectedItems) {
-            net.setEvidence(selectedItem, "True");
+            net.setEvidence(selectedItem, "Yes");
+        }
+
+        for(String notSelectedItem : notSelectedItems) {
+            net.setEvidence(notSelectedItem, "No");
         }
 
         net.updateBeliefs();
-        double[] beliefs = net.getNodeValue("Covid");
+        double[] beliefs = net.getNodeValue("COVID");
         return beliefs[0];
     }
 }

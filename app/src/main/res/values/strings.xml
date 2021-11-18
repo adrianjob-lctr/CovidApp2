@@ -27,4 +27,8 @@
     <string name="lts_title_text">Loss of Taste and Smell</string>
     <string name="lts_subtitle_text">Kawalan ng Panlasa o Pang-amoy</string>
     <string name="submit_button_text">Submit</string>
+    <string name="low_prob_recom">Follow Health Protocols</string>
+    <string name="low_prob_recom_sub">Your probability of having COVID-19 is low. Please continue to practice health and safety protocols.</string>
+    <string name="high_prob_recom">Consider getting a COVID-19 Test</string>
+    <string name="high_prob_recom_sub">Your probability of having COVID-19 is high. Please get in touch with a healthcare provider and consider getting tested for COVID-19.</string>
 </resources>

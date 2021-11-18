@@ -12,132 +12,108 @@
         android:layout_height="wrap_content"
         android:background="@drawable/gradient_background"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="25dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp">
+        android:gravity="center"
+        android:padding="30dp">
 
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:background="@drawable/landing_page_icon" />
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical">
+                android:fontFamily="@font/nunito_black"
+                android:text="COVID-19 Diagnosis App"
+                android:textColor="@color/white"
+                android:textSize="27sp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/roboto_black"
-                    android:text="COVID-19"
-                    android:textColor="@color/black"
-                    android:textSize="30sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="About Diagnostic App"
+                android:textColor="#F5F5F5"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/roboto_black"
-                    android:text="Diagnostic App"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/roboto_light"
-                    android:text="About Diagnostic App" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/main_act_start_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Start Diagnosis"
-            android:textColor="#050505"
-            app:backgroundTint="#f0c882"
-            app:cornerRadius="10dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="357dp"
-            android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/main_act_start_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:text="Start Diagnosis"
+                android:fontFamily="@font/nunito_black"
+                android:textColor="#424242"
+                app:backgroundTint="@color/porsche_100"
+                app:cornerRadius="25dp"/>
+        
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:fontFamily="@font/nunito_black"
+                android:text="More Information"
+                android:textColor="#F5F5F5"
+                android:textSize="20sp"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp">
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <!-- Media -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="195dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/learn_more_media"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="271dp"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="16dp">
+                        android:paddingVertical="10dp"
+                        android:paddingHorizontal="20dp">
 
-                        <!-- Title, secondary and supporting text -->
-
+                        <!-- Title and supporting text -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="COVID-19 UPDATES"
+                            android:text="About COVID-19"
+                            android:fontFamily="@font/nunito_black"
                             android:textAppearance="?attr/textAppearanceHeadline6" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="What is COVID-19?"
-                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Learn more information about the virus and its symptoms"
                             android:textColor="?android:attr/textColorSecondary" />
 
-                        <TextView
+                        <!-- Buttons -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/main_act_learn_btn"
+                            style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:text="According to World Health Organization, Coronavirus disease or COVID-19 is an infectious disease caused by the SARS-CoV-2 virus.  Most people infected with the virus will experience mild to moderate respiratory illness and recover without requiring special treatment. However, some will become seriously ill and require medical attention.... "
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="?android:attr/textColorSecondary" />
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Learn More"
+                            android:textColor="@color/porsche_100"
+                            app:cornerRadius="25sp"/>
 
                     </LinearLayout>
-
-                    <!-- Buttons -->
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/main_act_learn_btn"
-                        style="?attr/borderlessButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="220dp"
-                        android:text="Learn More"
-                        android:textColor="@color/purple_700" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-
-
-
 
     </LinearLayout>
 
